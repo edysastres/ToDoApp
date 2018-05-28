@@ -15,4 +15,7 @@
     <Folder Include="DependencyServices\" />
     <Folder Include="Extras\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\detallePage.xaml.cs" />
+  </ItemGroup>
 </Project>
