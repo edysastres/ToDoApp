@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ToDoApp" 
+             x:Class="ToDoApp.MainPage">
+    <StackLayout Padding="0, 20, 0, 0">
+        <!-- Place new controls here -->
+        <ListView 
+        IsPullToRefreshEnabled="true"
+        IsRefreshing="{Binding IsUpdating}"
+        RefreshCommand="{Binding RefreshingList}"
+            
+        VerticalOptions="FillAndExpand"
+            ItemsSource="{Binding ListToDo}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell 
+                        Height="30"
+                        Text="{Binding Title}"
+                        Detail="{Binding Description}"
+                        ImageSource="{Binding Image}"
+                        >
+                    </ImageCell>
+                    <!--<ViewCell>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Image Source="{Binding Image}" />
+                            <Label Text="{Binding Title}" />
+                        </StackLayout>
+                    </ViewCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>
